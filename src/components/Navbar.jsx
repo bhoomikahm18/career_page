@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 import React from 'react'
 
 export default function Navbar() {
@@ -11,7 +11,7 @@ export default function Navbar() {
                             Careers
                         </Typography>
                         <Button color="inherit">Login</Button>
-                        <Button color="inherit">Sign Up</Button>
+                        <Button color="inherit">Register</Button>
                     </Toolbar>
                 </AppBar>
             </Box>

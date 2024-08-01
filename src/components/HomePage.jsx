@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function HomePage() {
   return (
-    <div>HomePage</div>
+    <div>
+        <h1>Welcome to Career Page</h1>
+    </div>
   )
 }
