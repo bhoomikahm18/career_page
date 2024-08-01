@@ -1,0 +1,35 @@
+.footer {
+    background-color: #008fd1;
+    padding-top: 1rem;
+    color: white;
+}
+
+.footer h2 {
+    text-transform: uppercase;
+}
+
+.footer p {
+    line-height: 2;
+}
+
+@media (min-width:768px) {
+    .footer .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer .box {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+}
+
+.social-nav {
+    display: flex;
+}
+
+.copyright {
+    background-color: #004d70;
+    text-align: center;
+    margin: 3rem 0 0 0;
+    padding: 1rem 0;
+}

@@ -2,8 +2,7 @@
     padding: 10px;
     /* max-width: 1100px;
      */
-     width: 100%;
-    margin: auto;
+    width: 100%;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -12,24 +11,21 @@
 }
 
 .content {
-    align-items:last baseline;
+    align-items: last baseline;
     justify-content: center;
 }
 
 .box_content {
+    /* margin: 20px 20px; */
+    width: 100%;
+    align-items: center;
+    justify-content: center;
     background-image: url("https://img.freepik.com/premium-photo/business-man-working-laptop-with-job-search-screen_218381-8578.jpg");
     color: rgb(237, 235, 241);
 }
 
-.text_fields {
+/* .search_job{
+    margin: 0% 0% 0% 0%;
     padding: 20px;
-}
-
-@media (min-width: 768px) {
-    .content{
-        display: flex;
-        /* flex-direction: row; */
-        /* align-items: center; */
-        /* justify-content: center; */
-    }
-}
+    background-color:bisque;
+} */
