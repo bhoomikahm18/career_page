@@ -1,0 +1,10 @@
+.content {
+    align-items: center;
+    justify-content: center;
+}
+
+.box_content {
+    background-image: url("https://img.freepik.com/premium-photo/business-man-working-laptop-with-job-search-screen_218381-8578.jpg");
+    /* align-items: center; */
+    color: white;
+}
