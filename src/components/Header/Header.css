@@ -1,10 +1,35 @@
-.content {
+.body {
+    padding: 10px;
+    /* max-width: 1100px;
+     */
+     width: 100%;
+    margin: auto;
     align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+}
+
+.content {
+    align-items:last baseline;
     justify-content: center;
 }
 
 .box_content {
     background-image: url("https://img.freepik.com/premium-photo/business-man-working-laptop-with-job-search-screen_218381-8578.jpg");
-    /* align-items: center; */
-    color: white;
+    color: rgb(237, 235, 241);
+}
+
+.text_fields {
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .content{
+        display: flex;
+        /* flex-direction: row; */
+        /* align-items: center; */
+        /* justify-content: center; */
+    }
 }
