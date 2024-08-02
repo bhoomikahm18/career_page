@@ -1,10 +1,23 @@
 import { Button, Card, CardActions, CardContent, Typography } from '@mui/material'
-import React from 'react';
+import React, { useState } from 'react';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import ShareIcon from '@mui/icons-material/Share';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Jobs(props) {
+    const [user, setUser] = useState();
+    const navigate = useNavigate()
+
+    const id = localStorage.getItem("userID")
+
+    function handleApply() {
+        if (id) {
+            navigate(`/apply/${id}`)
+        } else {
+            alert("Please Login to Apply Jobs");
+        }
+    }
     return (
         <div>
             <Card sx={{
@@ -30,7 +43,8 @@ export default function Jobs(props) {
                 <CardActions>
                     <Button size="small"><ShareIcon /></Button>
                     <Button size="small"><BookmarkBorderIcon /></Button>
-                    <Button size='small'>Apply</Button>
+
+                    <Button onClick={handleApply} LinkComponent={Link} to='/apply/:id' size='small'>Apply</Button>
                 </CardActions>
             </Card>
         </div>

@@ -7,6 +7,7 @@ import Login from './components/User/Login.jsx';
 import { useState } from 'react';
 import JobList from './components/List/JobList.jsx';
 import CompanyDetails from './components/CompanyDetails/CompanyDetails.jsx';
+import JobApplyForm from './components/Job/JobApplyForm.jsx';
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -20,6 +21,7 @@ function App() {
         <Route path='/login' element={<Login isLogin={isLogin} setIsLogin={setIsLogin} />} />
         <Route path='/jobList' element={<JobList />} />
         <Route path='/' element={<CompanyDetails />} />
+        <Route path='/apply/:id' element={<JobApplyForm />} />
       </Routes>
       <Footer />
     </div>

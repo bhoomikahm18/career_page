@@ -74,11 +74,11 @@ export default function JobList() {
                 />
                 <Button className='search_btn' variant='text' sx={{ alignItems: 'center', mt: "60px", ml: "10px" }}>Search</Button>
             </div>
-            <Typography fontWeight={'bold'}
+            {/* <Typography fontWeight={'bold'}
                 padding={3}
                 color="grey"
                 variant='h4'
-                textAlign='center'>Job Openings</Typography>
+                textAlign='center'>Job Openings</Typography> */}
             {job && job.map((Joblist, index) => (
                 <Jobs
                     key={index}
