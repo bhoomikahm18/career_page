@@ -11,23 +11,30 @@
     width: 95%;
     margin-right: 1rem;
 }
-h1{
+
+h1 {
     text-align: center;
 }
 
-.heading-1{
+.heading-1 {
     color: darkgreen;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
 }
+
 .heading-2 {
     margin: 2rem 0rem 1rem 2rem;
-    text-align:left;
+    text-align: left;
+    font-style: italic;
 }
 
-.heading-3{
+.heading-3 {
     color: blue;
+    font-style: italic;
+
 }
 
-.img-2{
+.img-2 {
     margin-left: 1rem;
     width: 50%;
 }
