@@ -40,8 +40,6 @@ export default function Login() {
 
     }
 
-
-
     function handleSubmit(e) {
         e.preventDefault();
         console.log(inputs);
@@ -53,7 +51,8 @@ export default function Login() {
         } else {
             sendRequest("login")
                 .then(data => console.log(data.users))
-                .catch(err => console.log(err))
+                .then(() => navigate('/'))
+                .catch(alert("User not found! Please Register"))
         }
     }
 

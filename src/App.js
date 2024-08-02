@@ -5,6 +5,8 @@ import Navbar from './components/Navbar/Navbar.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import Login from './components/User/Login.jsx';
 import { useState } from 'react';
+import JobList from './components/List/JobList.jsx';
+import CompanyDetails from './components/CompanyDetails/CompanyDetails.jsx';
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -16,6 +18,8 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/register' element={<Login />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/jobList' element={<JobList />} />
+        <Route path='/about' element={<CompanyDetails />} />
       </Routes>
       <Footer />
     </div>

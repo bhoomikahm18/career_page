@@ -34,12 +34,13 @@ export default function JobList() {
             <Typography fontWeight={'bold'}
                 padding={3}
                 color="grey"
-                variant='h2'
+                variant='h4'
                 textAlign='center'>Job Openings</Typography>
             {job && job.map((Joblist, index) => (
                 <Jobs
                     key={index}
                     title={Joblist.title}
+                    skills={Joblist.skills}
                     description={Joblist.discription}
                     location={Joblist.location}
 

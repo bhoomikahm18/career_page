@@ -13,6 +13,9 @@ export default function Navbar(props) {
                             Careers
                         </Typography>
                         {/* <Button LinkComponent={Link} to="/register" color="inherit">Register</Button> */}
+                        <Button LinkComponent={Link} to="/jobList" color="inherit">Find Job</Button>
+                        <Button LinkComponent={Link} to="/about" color="inherit">About Us</Button>
+                        <Button LinkComponent={Link} to="/contact" color="inherit">Contact Us</Button>
                         <Button LinkComponent={Link} to="/login" color="inherit">Login</Button>
                     </Toolbar>
                 </AppBar>

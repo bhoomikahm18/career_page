@@ -10,7 +10,7 @@ export default function HomePage() {
         <div className='body'>
             <Box className='box_content'
                 height={400}
-                width={550}
+                width={1100}
                 my={4}
                 display="flex"
                 alignItems="last baseline"
@@ -19,7 +19,8 @@ export default function HomePage() {
                 p={2}
                 sx={{ flexGrow: 1, border: '2px solid grey' }}
             >
-                <h1>Welcome to Career Page</h1>
+                {/* <img src="https://img.freepik.com/premium-photo/business-man-working-laptop-with-job-search-screen_218381-8578.jpg" label="Start Your Career" /> */}
+                <h1>Start Your Career </h1>
             </Box>
             <Typography variant='h3'>Search Jobs</Typography>
 
