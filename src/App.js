@@ -16,8 +16,8 @@ function App() {
       <Navbar isLogin={isLogin} setIsLogin={setIsLogin} />
       <Routes>
         <Route path='/homepage' element={<HomePage />} />
-        <Route path='/register' element={<Login />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Login isLogin={isLogin} setIsLogin={setIsLogin} />} />
+        <Route path='/login' element={<Login isLogin={isLogin} setIsLogin={setIsLogin} />} />
         <Route path='/jobList' element={<JobList />} />
         <Route path='/' element={<CompanyDetails />} />
       </Routes>

@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 
 export default function Navbar(props) {
 
+    function handleLogout() {
+        localStorage.clear();
+        props.setIsLogin(false);
+    }
+
     return (
         <div>
             <Box sx={{ flexGrow: 1 }}>
@@ -16,7 +21,10 @@ export default function Navbar(props) {
                         <Button LinkComponent={Link} to="/jobList" color="inherit">Find Jobs</Button>
                         <Button LinkComponent={Link} to="/" color="inherit">About Us</Button>
                         <Button LinkComponent={Link} to="/contact" color="inherit">Contact Us</Button>
-                        <Button LinkComponent={Link} to="/login" color="inherit">Login</Button>
+                        {!props.isLogin ?
+                            <Button LinkComponent={Link} to="/login" color="inherit">Sign In</Button>
+                            : <Button onClick={handleLogout} LinkComponent={Link} to="/login" color="inherit">Log out</Button>
+                        }
                     </Toolbar>
                 </AppBar>
             </Box>

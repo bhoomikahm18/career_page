@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
 
-export default function Login() {
+export default function Login(props) {
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({
         name: "",
@@ -46,12 +46,15 @@ export default function Login() {
         if (isRegister) {
             sendRequest("register")
                 .then(data => console.log(data.users))
-                .then(() => navigate('/homepage'))
-                .catch(err => console.log(err))
+                .then(() => navigate('/login'))
+                .catch(alert("Unable to Register This User"))
         } else {
             sendRequest("login")
-                .then(data => console.log(data.users))
-                .then(() => navigate('/homepage'))
+                .then(data => localStorage.setItem("userId", data.user._id))
+                .then(() => {
+                    props.setIsLogin(true)
+                    navigate('/homepage')
+                })
                 .catch(alert("User not found! Please Register"))
         }
     }
