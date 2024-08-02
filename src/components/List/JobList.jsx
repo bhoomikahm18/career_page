@@ -1,7 +1,33 @@
 import { Button, Typography } from '@mui/material'
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import Jobs from './Jobs.jsx';
+// import { response } from 'express';
 
 export default function JobList() {
+    const [job, setJobs] = useState();
+
+    async function getAllJobs() {
+        const res = await axios.get("/jobs/allJobs")
+            .catch(err => console.log(err));
+
+        if (res.status !== 200) {
+            return console.log("No data Found");
+        }
+
+        let data = null;
+        if (res) {
+            data = await res.data;
+            console.log(data);
+        }
+        return data;
+    }
+
+    useEffect(() => {
+        getAllJobs()
+            .then(data => setJobs(data.jobs))
+            .catch(err => console.log(err))
+    }, )
     return (
         <div>
 
@@ -10,10 +36,15 @@ export default function JobList() {
                 color="grey"
                 variant='h2'
                 textAlign='center'>Job Openings</Typography>
-            <Typography variant="body2" color="text.secondary">
-                Job Title <br /> Discription
-            </Typography>
-            <Button type="submit" sx={{ mt: 2, borderRadius: 4 }} variant='contained' color='warning'>Apply</Button>
+            {job && job.map((Joblist, index) => (
+                <Jobs
+                    key={index}
+                    title={Joblist.title}
+                    description={Joblist.discription}
+                    location={Joblist.location}
+
+                />
+            ))}
         </div>
     )
 }

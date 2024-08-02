@@ -1,9 +1,11 @@
 import { Autocomplete, Box, Button, Card, CardContent, TextField, Typography } from '@mui/material'
 import React from 'react';
 import './Header.css';
+import JobList from '../List/JobList';
 // import JobList from '../List/JobList';
 
 export default function HomePage() {
+
     return (
         <div className='body'>
             <Box className='box_content'
@@ -28,6 +30,7 @@ export default function HomePage() {
                 <TextField label="Location" sx={{ padding: "2px", backgroundColor: "white" }} />
                 <Button variant='contained' sx={{ alignItems: 'center' }}>Search</Button>
             </div>
+            <JobList />
         </div >
     )
 }

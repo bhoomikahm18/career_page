@@ -1,34 +1,60 @@
-import { Box, Button, FormLabel, IconButton, TextField, Typography } from '@mui/material';
+import { Alert, Box, Button, FormLabel, IconButton, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
 
 export default function Login() {
+    const navigate = useNavigate();
     const [inputs, setInputs] = useState({
         name: "",
         email: "",
         password: "",
     });
 
-    async function sendRequest() {
-        const res = await axios.post(`/login`, {
-            name: inputs.name,
-            email: inputs.email,
-            password: inputs.password,
-        })
-            .catch(err => console.log(err));
-
-        const data = await res.data;
-        return data;
-    }
+    const [isRegister, setIsRegister] = useState(false);
 
     function handleChange(e) {
         setInputs(prevState => ({
             ...prevState,
             [e.target.name]: e.target.value
         }))
+    }
+
+    async function sendRequest(type) {
+
+        const res = await axios.post(`/user/${type}`, {
+            name: inputs.name,
+            email: inputs.email,
+            password: inputs.password,
+        })
+            .catch(err => console.log("Error sending request: ", err));
+
+        let data = null;
+        if (res) {
+            data = await res.data;
+            console.log(data);
+        }
+        return data;
+
+    }
+
+
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log(inputs);
+        if (isRegister) {
+            sendRequest("register")
+                .then(data => console.log(data.users))
+                .then(() => navigate('/'))
+                .catch(err => console.log(err))
+        } else {
+            sendRequest("login")
+                .then(data => console.log(data.users))
+                .catch(err => console.log(err))
+        }
     }
 
     return (
@@ -38,10 +64,8 @@ export default function Login() {
                     <CloseRoundedIcon />
                 </IconButton>
             </Box>
-            <Typography variant="h4" textAlign={"center"}>
-                Login or Register
-            </Typography>
-            <form >
+            <form onSubmit={handleSubmit}>
+
                 <Box
                     padding={6}
                     display={"flex"}
@@ -51,15 +75,21 @@ export default function Login() {
                     margin="auto"
                     alignContent={"center"}
                 >
-                    <FormLabel >Name</FormLabel>
-                    <TextField
-                        onChange={handleChange}
-                        value={inputs.name}
-                        margin="normal"
-                        variant="standard"
-                        type={"text"}
-                        name="name"
-                    />
+                    <Typography variant="h4" textAlign={"center"}>
+                        {isRegister ? "Register" : "Login"}
+                    </Typography>
+                    {isRegister &&
+                        <>
+                            <FormLabel >Name</FormLabel>
+                            <TextField
+                                onChange={handleChange}
+                                value={inputs.name}
+                                margin="normal"
+                                variant="standard"
+                                type={"text"}
+                                name="name"
+                            />
+                        </>}{" "}
                     <FormLabel >Email</FormLabel>
                     <TextField
                         onChange={handleChange}
@@ -84,14 +114,9 @@ export default function Login() {
                         fullWidth
                         variant="contained"
                     >
-                        Login
+                        Submit
                     </Button>
-                    <Button
-                        sx={{ mt: 2, borderRadius: 10 }}
-                        fullWidth
-                    >
-                        Switch To Login to Register
-                    </Button>
+                    <Button onClick={() => setIsRegister(!isRegister)} sx={{ borderRadius: 3, marginTop: 3 }}>Change to {isRegister ? "Login" : "Register"}</Button>
                 </Box>
             </form>
         </div>
