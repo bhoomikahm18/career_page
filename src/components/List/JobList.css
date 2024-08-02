@@ -1,0 +1,42 @@
+/* .job_heading {
+    margin-top: 2rem;
+    color: darkcyan;
+} */
+
+.job_finding {
+    background-color: rgb(211, 224, 222);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.job_type_field {
+    width: 25%;
+    margin-right: 1rem;
+    display: inline-block;
+}
+
+.text_field-1 {
+    width: 25%;
+    margin: 0rem 1rem 2rem 0rem;
+    display: inline-block;
+}
+
+.text_field-2 {
+    width: 25%;
+    display: inline-block;
+    /* margin-right: 47%; */
+}
+
+/* 
+.search_btn {
+    margin-top: 20px;
+    padding-top: 2px;
+} */
+
+.search_img {
+    /* padding: 5%; */
+    display: flex;
+    margin: 0% 0% 2% 10%;
+    /* margin-bottom: 2% ; */
+    width: 80%;
+}

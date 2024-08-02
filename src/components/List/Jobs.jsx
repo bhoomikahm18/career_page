@@ -8,7 +8,7 @@ export default function Jobs(props) {
     return (
         <div>
             <Card sx={{
-                width: '100%', margin: 'auto', mt: 2, padding: 2, boxShadow: "5px 5px 10px #ccc",
+                width: '80%', margin: 'auto', mt: 2, padding: 4, boxShadow: "5px 5px 10px #ccc",
                 ":hover": {
                     boxShadow: "10px 10px 20px #ccc"
                 }
