@@ -1,0 +1,33 @@
+.profile {
+    background-color: rgb(217, 233, 246);
+    /* color: white; */
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+.img-1 {
+    padding: 2rem;
+    width: 95%;
+    margin-right: 1rem;
+}
+h1{
+    text-align: center;
+}
+
+.heading-1{
+    color: darkgreen;
+}
+.heading-2 {
+    margin: 2rem 0rem 1rem 2rem;
+    text-align:left;
+}
+
+.heading-3{
+    color: blue;
+}
+
+.img-2{
+    margin-left: 1rem;
+    width: 50%;
+}

@@ -15,11 +15,11 @@ function App() {
     <div>
       <Navbar isLogin={isLogin} setIsLogin={setIsLogin} />
       <Routes>
-        <Route path='/' element={<HomePage />} />
+        <Route path='/homepage' element={<HomePage />} />
         <Route path='/register' element={<Login />} />
         <Route path='/login' element={<Login />} />
         <Route path='/jobList' element={<JobList />} />
-        <Route path='/about' element={<CompanyDetails />} />
+        <Route path='/' element={<CompanyDetails />} />
       </Routes>
       <Footer />
     </div>

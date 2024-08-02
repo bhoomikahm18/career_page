@@ -46,12 +46,12 @@ export default function Login() {
         if (isRegister) {
             sendRequest("register")
                 .then(data => console.log(data.users))
-                .then(() => navigate('/'))
+                .then(() => navigate('/homepage'))
                 .catch(err => console.log(err))
         } else {
             sendRequest("login")
                 .then(data => console.log(data.users))
-                .then(() => navigate('/'))
+                .then(() => navigate('/homepage'))
                 .catch(alert("User not found! Please Register"))
         }
     }
