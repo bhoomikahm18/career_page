@@ -8,6 +8,7 @@ import { useState } from 'react';
 import JobList from './components/List/JobList.jsx';
 import CompanyDetails from './components/CompanyDetails/CompanyDetails.jsx';
 import JobApplyForm from './components/Job/JobApplyForm.jsx';
+import ApplicationForm from './components/Job/ApplicationForm.jsx';
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -22,6 +23,7 @@ function App() {
         <Route path='/jobList' element={<JobList />} />
         <Route path='/' element={<CompanyDetails />} />
         <Route path='/apply/:id' element={<JobApplyForm />} />
+        <Route path='/apply' element={<ApplicationForm />} />
       </Routes>
       <Footer />
     </div>
