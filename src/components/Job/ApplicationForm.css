@@ -22,7 +22,7 @@
     padding: 10px 0 20px 0;
 }
 
-.heading_2{
+.heading_2 {
     font-family: monospace;
     font-size: large;
     padding-bottom: 10px;
@@ -33,7 +33,6 @@
     margin-right: 0;
     padding: 5px;
 }
-
 
 @media (min-width:768px) {
     .file_structure {

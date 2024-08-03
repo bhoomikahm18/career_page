@@ -1,4 +1,4 @@
-import { Alert, Box, Button, FormLabel, IconButton, TextField, Typography } from '@mui/material';
+import { Box, Button, FormLabel, IconButton, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import { Link, useNavigate } from 'react-router-dom';
@@ -23,7 +23,6 @@ export default function Login(props) {
     }
 
     async function sendRequest(type) {
-
         const res = await axios.post(`/user/${type}`, {
             name: inputs.name,
             email: inputs.email,

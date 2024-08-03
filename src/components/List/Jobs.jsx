@@ -1,12 +1,11 @@
 import { Button, Card, CardActions, CardContent, Typography } from '@mui/material'
-import React, { useState } from 'react';
+import React from 'react';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import ShareIcon from '@mui/icons-material/Share';
-import BookmarkIcon from '@mui/icons-material/Bookmark';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function Jobs(props) {
-    const [user, setUser] = useState();
+    // const [user, setUser] = useState();
     const navigate = useNavigate()
 
     const id = localStorage.getItem("userID")
@@ -44,7 +43,7 @@ export default function Jobs(props) {
                     <Button size="small"><ShareIcon /></Button>
                     <Button size="small"><BookmarkBorderIcon /></Button>
 
-                    <Button onClick={handleApply} LinkComponent={Link} to='/apply/:id' size='small'>Apply</Button>
+                    <Button onClick={handleApply} LinkComponent={Link} to='/apply' size='small'>Apply</Button>
                 </CardActions>
             </Card>
         </div>
